@@ -1,0 +1,15 @@
+.footer {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edf3f6;
+    padding: .5em 2em;
+    color: #666666;
+}
+
+.footer .socialMedia a{     
+    padding: 1em;
+    color: #666666;
+    font-size: 1.2em;
+}

@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 2em;
+    background: #F6FCFF;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 10px 5px;
+    left: 0;
+}
+
+.brand  {       
+    font-size: 1.2em;
+}
+
+.brand span {
+    color: #3f51b5;
+    font-weight: 900;
+    text-transform: uppercase
+}
+
+.links_list {
+    display: flex;
+    list-style: none;
+}
+
+.links_list {
+    margin-right: 1em;
+}
+
+.links_list li a {
+    padding: 0.4em 0.6em;    
+}
+
+.active {
+    transition: all 1s ease-out;
+    background-color: #3f51b5;
+    color: #fff;  
+  }
