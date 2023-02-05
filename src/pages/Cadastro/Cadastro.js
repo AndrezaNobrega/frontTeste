@@ -18,6 +18,8 @@ const Cadastro = () => {
         setTelefone(maskedTel)
     }
 
+    const usenavigate = useNavigate()
+
     const [nomeUsuario, setNomeUsuario] = useState("");
     const [razaoSocial, setRazaoSocial] = useState("");
     const [email, setEmail] = useState("");
@@ -47,14 +49,12 @@ const Cadastro = () => {
             method: "POST",
             headers:{'content-type': 'application/json'},
             body: JSON.stringify(user)
-        }).then((res) => {
-            console.log("Registrado com sucesso")            
+        }).then((res) => {            
+            usenavigate('/')          
             //aqui a gente vai redirecionar pra tela já cadastrado
         }).catch((error) =>{
             setError(error.message)
         })
-
-        console.log(user)
 
     }
     return (

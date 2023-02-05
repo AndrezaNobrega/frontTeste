@@ -10,8 +10,8 @@ import Footer from './components/Footer';
 import Login from './pages/Login/Login';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Home from './pages/Home/Home';
-
-
+import Cupons from './pages/Cupons/Cupons';
+import { Perfil } from './pages/Perfil/Perfil';
 
 
 function App() {
@@ -23,7 +23,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/cadastro" element={<Cadastro/>}/>            
+            <Route path="/cadastro" element={<Cadastro/>}/>     
+            <Route path="/perfil" element={<Perfil/>}/>     
+            <Route path="/cupons" element={<Cupons/>}/>
           </Routes>
         </div>
         <Footer/>

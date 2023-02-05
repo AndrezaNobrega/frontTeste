@@ -1,3 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.css'
+
 body {
   background: #FFFFFF  ;
   padding: 0;
@@ -80,18 +82,18 @@ textarea {
 .btn.btn-outline {
   background-color: transparent;
   border-radius: 0;
-  color: #000;
-  border: 1px solid #000;
+  color: #0075FF;
+  border: 1px solid #0075FF;
   padding: 7px 30px;
 }
 
 .btn:hover {
-  background-color: #282f8f;
+  background-color: #0075FF;
   color: #FFF;
 }
 
 .btn.btn-outline:hover {
-  background-color: #000;  
+  background-color: #0075FF;  
 }
 
 button[disabled] {

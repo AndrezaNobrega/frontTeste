@@ -15,9 +15,15 @@ const Navbar = () => {
                 <li>
                     <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/cadastro">Cadastro</NavLink>
                 </li>
+                <li>
+                    <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/perfil">Perfil</NavLink>
+                </li>
+                <li>
+                    <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/cupons">Cupons</NavLink>
+                </li>
             </ul>
         </nav>
-    )
+    )   
 }
 
 export default Navbar

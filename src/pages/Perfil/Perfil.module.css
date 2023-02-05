@@ -1,0 +1,54 @@
+.perfil {  
+    margin-left: 10px;
+    display: flex;
+}
+
+.titulo { 
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.perfil img {   
+    width: 30%;
+}
+
+.lateral h5 {
+    color: #aaa;
+}
+
+.lateral {
+    list-style-type: none; 
+    border-right: 1px solid #ccc;
+    width: 250px; 
+}
+
+.lateral,
+.principal {
+    justify-content: center; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 100px;  
+}
+
+.principal {
+    height: 500px;
+    width: 70%;
+}
+
+.endereco {
+    padding-bottom: 25px;  
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30% 30%;
+}
+
+.active {
+    color: #0075FF;
+    font-weight: bold; 
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.2s ease-in;
+}

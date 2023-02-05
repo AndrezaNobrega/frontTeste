@@ -2,5 +2,9 @@
   background-color: #F6FCFF;
   padding-top: 102px;
   min-height: 60vh;
-  margin-bottom: 5em;
+}
+
+/*tirar botões do input n*/
+.container input[type=number] {
+  -moz-appearance:textfield;
 }

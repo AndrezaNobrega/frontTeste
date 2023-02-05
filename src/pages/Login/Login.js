@@ -29,8 +29,7 @@ const Login = () => {
                         console.log('Login feito com sucesso')
                         //aqui vai mandar para a página de home
                         usenavigate('/')
-                    } else{
-                        console.log('objeto inteiro'+ resp.id)                      
+                    } else{                             
                         
                         setError("Login ou senha inválidos")
                     }
