@@ -1,0 +1,49 @@
+
+
+.produto {
+    justify-content: center;
+    margin-left: 10px;
+    display: flex;
+}
+
+.produto,
+.lateral {
+    margin-bottom: 5%;
+}
+
+.lateral {
+    margin-left: 10px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 100px;  
+    border-left: 1px solid #ccc;
+    width: 400px; 
+}
+
+.lateral span {
+    color: #666666;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.lateral i{
+    color: #0075FF;
+    padding-bottom: 10%;
+    font-size: 13px;
+}
+
+.lateral a {
+    font-weight: bold;
+    color: #0075FF;
+    font-size: 25px;
+    margin-bottom: 10%;
+}
+
+.lateral button {
+    flex-direction: row;
+    margin-left: 20px;
+    width: 180px;
+    font-size: 0.7em;
+}

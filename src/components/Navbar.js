@@ -16,10 +16,10 @@ const Navbar = () => {
                     <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/cadastro">Cadastro</NavLink>
                 </li>
                 <li>
-                    <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/perfil">Perfil</NavLink>
+                    <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/tabela">Produtos</NavLink>
                 </li>
                 <li>
-                    <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/cupons">Cupons</NavLink>
+                    <NavLink className={({isActive}) => (isActive ? styles.active : '')}  to="/perfil">Perfil</NavLink>
                 </li>
             </ul>
         </nav>

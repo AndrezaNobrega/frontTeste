@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import styles from "./Cupons.module.css"
+import Cupom from '../../components/Cupons/Cupom';
 
 const Cupons = () => {
     const [lista, setLista] = useState([]);
@@ -15,9 +17,17 @@ const Cupons = () => {
         carregaDados()
     }, [])
 
-    console.log('lista', lista)
-
-    return ( lista.map(result => <li key = { result.id }> { result.nome } </li>)
+    return ( 
+    <div>        
+        <div className={styles.cupons}>    
+            {lista.map(result => 
+            <li key = { result.id }> 
+                { <Cupom nome={result.nome}
+                validade={result.validade}
+                /> } 
+            </li>)}
+        </div>
+    </div>
     )
 }
 

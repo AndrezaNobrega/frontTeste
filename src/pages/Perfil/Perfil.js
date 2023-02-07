@@ -3,6 +3,10 @@ import profile from "../../profile/user.png";
 import { useState } from "react";
 import { unMask, mask } from 'remask';
 
+
+
+import Cupons from "../Cupons/Cupons";
+
 export const Perfil = () => {
   const [mostrar, setMostrar] = useState("Endereço");
   const [cep, setCep] = useState("");
@@ -45,6 +49,11 @@ export const Perfil = () => {
               <a 
               className={(mostrar =="Dados" ? styles.active : '')}
               onClick={() => setMostrar("Dados")}>Dados bancários</a>
+            </li>
+            <li>
+              <a 
+              className={(mostrar =="Cupons" ? styles.active : '')}
+              onClick={() => setMostrar("Cupons")}>Cupons</a>
             </li>
           </lu>
         </div>
@@ -113,6 +122,7 @@ export const Perfil = () => {
               <button className="btn btn-outline">Adicionar</button>
             </>
           )}
+          {mostrar == "Cupons" && (<Cupons/>)}
         </div>
       </div>
     </>

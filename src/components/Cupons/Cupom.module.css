@@ -1,0 +1,28 @@
+.cupom{
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    transition: all 0.5s ease-out;
+    border-left: 4px solid #3f51b5;
+    padding: 30px;
+    margin: 20px;
+    height: 150px;
+    width: 350px;
+}
+
+.cupom:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
+.cupom p {
+    color: #a3a5ae;
+    font-size: 16px;
+}
+
+.icone {
+    color: #3f51b5;
+    font-size: 50px;
+    padding-left: 6em
+    
+    }
