@@ -24,7 +24,7 @@ const ProdutosTabela = () => {
 
     useEffect(() => {
         carregaDados()
-    }, [])
+    }, [carregaDados])
 
 
     return (

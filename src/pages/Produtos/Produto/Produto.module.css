@@ -1,49 +1,77 @@
+.miniaturas {
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
 
+.miniaturas img {
+  width: 115px;
+  margin-bottom: 6px;
+}
+
+.miniaturas img:hover {
+  border: 3px solid #666666;
+}
 
 .produto {
-    justify-content: center;
-    margin-left: 10px;
-    display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 15px;
+  display: flex;
 }
 
 .produto,
 .lateral {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
+}
+
+.imagemPrincipal img {
+  width: 50%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
 }
 
 .lateral {
-    margin-left: 10px;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 100px;  
-    border-left: 1px solid #ccc;
-    width: 400px; 
+  margin-left: 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+  width: 400px;
 }
 
 .lateral span {
-    color: #666666;
-    font-size: 20px;
-    margin-bottom: 25px;
+  color: #666666;
+  font-size: 20px;
+  margin-bottom: 35%;
 }
 
-.lateral i{
-    color: #0075FF;
-    padding-bottom: 10%;
-    font-size: 13px;
+.lateral i {
+  color: #0075ff;
+  padding-bottom: 23%;
+  font-size: 13px;
 }
 
 .lateral a {
-    font-weight: bold;
-    color: #0075FF;
-    font-size: 25px;
-    margin-bottom: 10%;
+  font-weight: bold;
+  color: #0075ff;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.lateral a,
+.lateral i {
+  text-align: left;
 }
 
 .lateral button {
-    flex-direction: row;
-    margin-left: 20px;
-    width: 180px;
-    font-size: 0.7em;
+  flex-direction: row;
+  width: 180px;
+  font-size: 0.7em;
+}
+
+.comprarAgora {
+  margin-left: 20px;
 }
