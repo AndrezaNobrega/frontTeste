@@ -6,7 +6,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Produto = () => {
-  const [mostrar, setMostrar] = useState("0");
+  const [mostrar, setMostrar] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [produtos, setProdutos] = useState({});
 
@@ -26,27 +26,28 @@ const Produto = () => {
   }, [setProdutos]);
 
   return (
+    
     <div>
+      
       {!isLoading && (
         <div className={styles.produto}>
           <div className={styles.miniaturas}>
-            <img onClick={() => setMostrar("0")} src={produtos.imagem[0]} />
-            <img onClick={() => setMostrar("1")} src={produtos.imagem[1]} />
-            <img onClick={() => setMostrar("2")} src={produtos.imagem[2]} />
-            <img onClick={() => setMostrar("3")} src={produtos.imagem[3]} />
-            <img onClick={() => setMostrar("4")} src={produtos.imagem[4]} />
+             { produtos.imagem.map( (imagem, i) => 
+              <img onClick={() => setMostrar(i)} src={produtos.imagem[i]}               
+             />) }
+     
           </div>
           <div className={styles.imagemPrincipal}>
-            {mostrar == "0" && <img src={produtos.imagem[0]}></img>}
-            {mostrar == "1" && <img src={produtos.imagem[1]}></img>}
-            {mostrar == "2" && <img src={produtos.imagem[2]}></img>}
-            {mostrar == "3" && <img src={produtos.imagem[3]}></img>}
-            {mostrar == "4" && <img src={produtos.imagem[4]}></img>}
+            {mostrar === 0 && <img src={produtos.imagem[0]}></img>}
+            {mostrar === 1 && <img src={produtos.imagem[1]}></img>}
+            {mostrar === 2 && <img src={produtos.imagem[2]}></img>}
+            {mostrar === 3 && <img src={produtos.imagem[3]}></img>}
+            {mostrar === 4 && <img src={produtos.imagem[4]}></img>}
           </div>
           <div className={styles.lateral}>
             <h2>{produtos.nome}</h2>
-            <a>R$ {produtos.preco}</a>
-            <i>ou 10x de R$ {produtos.preco / 10} sem juros</i>
+            <a>R$ {(parseFloat(produtos.preco)).toLocaleString('pt-BR', { minimumFractionDigits: 2})}</a>
+            <i>ou 10x de R$ {((parseFloat(produtos.preco))/10).toLocaleString('pt-BR', { minimumFractionDigits: 2})} sem juros</i>
             <span>{produtos.descricao}</span>
             <i>Mais {produtos.estoque} unidades disponíveis</i>
             <div className={styles.botoes}>

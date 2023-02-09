@@ -1,0 +1,16 @@
+.cards {     
+    list-style-type: none; 
+    padding-bottom: 10px;  
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards li {
+    margin-left: 10px;
+}
+
+
