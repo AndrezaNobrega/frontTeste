@@ -6,7 +6,7 @@ import CardProduto from '../../components/CardsProduto/CardProduto';
 import { Link } from 'react-router-dom';
 
 
-const Cupons = () => {
+const Home = () => {
     const [lista, setLista] = useState([]);
     const url = 'http://localhost:3001/produtos';
 
@@ -39,4 +39,4 @@ const Cupons = () => {
     )
 }
 
-export default Cupons
+export default Home
