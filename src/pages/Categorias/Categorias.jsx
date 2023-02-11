@@ -1,76 +1,48 @@
-import {useState, useEffect, useRef} from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
-import styles from "./Categorias.module.css"
-import CardProduto from '../../components/CardsProduto/CardProduto';
 
-//setas
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 
-import { Link } from 'react-router-dom';
+import Carrossel from '../../components/Carrossel/Carrossel';
+
 
 const Categorias = () => {
-    const [lista, setLista] = useState([]);
-    const url = 'http://localhost:3001/produtos';
-    //p pegar a ref do carrossel
-    const carousel = useRef(null);
+    const [listaSmartphones, setListaSmartphones] = useState([]);
+    const [listaMonitor, setListaMonitor] = useState([]);
+    const [listaNotebook, setListaNotebook] = useState([]);
+    
+    
+    
+    const url = 'http://localhost:3001/produtos?categoria=';
 
-    async function carregaDados(){
-        await axios.get(url).
-        then(response => setLista(response.data),
-        console.log('lista',lista))    }
+
+   //multiplas requisições
+   const multiple = () => {
+    Promise.all([
+        axios.get(url+'monitor'),
+        axios.get(url+'smartphones'),
+        axios.get(url+'notebooks')
+    ]).then((response) => {
+            setListaSmartphones(response[1].data);
+            setListaMonitor(response[0].data);
+            setListaNotebook(response[2].data)
+        })
+    
+    }
+
 
     useEffect(() => {
-        carregaDados()
+        multiple()
     }, [])
 
-    if (!lista || !lista.length) return null;
 
-    const handleLeftClick = (e) => {
-        e.preventDefault();
-        console.log(carousel.current.offsetWidth)
-        carousel.current.scrollLeft  -= carousel.current.offsetWidth;
+    if (!listaMonitor || !listaMonitor.length) return null;
 
-    }
-
-    const handleRightClick = (e) => {
-        console.log(carousel.current.offsetWidth)
-        e.preventDefault();
-        carousel.current.scrollLeft  += carousel.current.offsetWidth;        
-    }
 
     return ( 
-    <div className={styles.categoria}>  
-    <h1>Categorias</h1> 
-
-        <div className={styles.categorias}>   
-            <h1>Smartphones</h1>
-            <hr/>  
-            <div className={styles.coluna}>  
-
-                <button onClick={handleLeftClick}>                    
-                    <GoChevronLeft/>                    
-                </button>    
-
-                <div className={styles.carousel} ref={carousel}>   
-            
-                    {lista.map(result => 
-                    <li key = { result.id } to={`/produtos/${result.id}`}> 
-                        <Link to={`/produtos/${result.id}`}>                       
-                            { <CardProduto nome={result.nome}
-                            preco={result.preco} imagem ={result.imagem[0]}                    
-                            /> } 
-                        </Link>
-                    </li>)}
-                </div>
-
-                <button onClick={handleRightClick}>                    
-                        <GoChevronRight/>                    
-                </button>
-
-            </div> 
-        </div>  
-
-        
+    <div>          
+        <Carrossel lista={listaMonitor} categoria={"Monitores"}/>    
+        <Carrossel lista={listaSmartphones} categoria={"Smartphones"}/>    
+        <Carrossel lista={listaNotebook} categoria={"Notebooks"}/>       
     </div>
     )
 }
