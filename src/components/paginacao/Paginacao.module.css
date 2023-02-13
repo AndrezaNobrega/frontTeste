@@ -1,0 +1,31 @@
+.paginacao {
+    display: flex;
+    list-style: none;
+}
+
+.paginacao li{
+    margin-left: 3px;
+    margin-right: 3px;
+
+}
+
+.paginacao button {
+    font-size: 10px;
+    background-color: transparent;
+    border-radius: 0;
+    color: #0075FF;
+    border: 1px solid #0075FF;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.paginacao button:focus {
+    background-color: #0075FF;
+    color: #FFF;
+}
+
+
+.paginacao button[disabled] {    
+    border: 1px solid #8dbbf0;
+    color: #8dbbf0;
+  }

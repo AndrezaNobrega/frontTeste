@@ -5,6 +5,7 @@ import styles from "./ProdutosTabela.module.css";
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import Paginacao from "../../components/paginacao/paginacao";
 
 
 
@@ -12,19 +13,40 @@ import { Link } from "react-router-dom";
 
 
 const ProdutosTabela = () => {
+    const [total, setTotal] = useState("");
+    const [produtos, setProdutos] = useState([]);
+    const [offSet, setOffSet] = useState(0);
+    const url = `http://localhost:3001/produtos/?_page=${offSet}&_limit=5`;
 
-    const [produtos, setprodutos] = useState([]);
-    const url = 'http://localhost:3001/produtos';
+    
+
+
+    //multiplas requisições
+    const multiple = () => {
+    Promise.all([
+        axios.get(url),
+        axios.get('http://localhost:3001/produtos')        
+    ]).then((response) => {
+            setProdutos(response[0].data);
+            setTotal((response[1].data).length);
+        })    
+    }
+
+    useEffect(() => {
+        multiple()
+    }, [offSet])
+
 
     async function carregaDados(){
         await axios.get(url).
-        then(response => setprodutos(response.data),
+        then(response => setProdutos(response.data),
         console.log(produtos))
     }
 
     useEffect(() => {
         carregaDados()
-    }, [carregaDados])
+    }, [offSet] )
+
 
 
     return (
@@ -43,7 +65,11 @@ const ProdutosTabela = () => {
                         </Link>
                     </div>
                     </div>)}
-                </>         
+                </> 
+                <Paginacao limite = {5}
+                total = {total}
+                offSet={offSet}
+                setOffSet={setOffSet} />   
         </div>
     )
 }

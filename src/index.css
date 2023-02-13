@@ -97,9 +97,6 @@ textarea {
   background-color: #0075FF;  
 }
 
-button[disabled] {
-  background-color: #AAA;
-}
 
 .container .error {
   color: #721c24;
