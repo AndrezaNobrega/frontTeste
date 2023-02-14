@@ -1,8 +1,12 @@
+//css
+import styles from "./Categorias.module.css"
+
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-
+//components
 import Carrossel from '../../components/Carrossel/Carrossel';
+import Banner from '../../components/banner/Banner';
 
 
 const Categorias = () => {
@@ -39,10 +43,14 @@ const Categorias = () => {
 
 
     return ( 
-    <div>          
-        <Carrossel lista={listaMonitor} categoria={"Monitores"}/>    
-        <Carrossel lista={listaSmartphones} categoria={"Smartphones"}/>    
-        <Carrossel lista={listaNotebook} categoria={"Notebooks"}/>       
+    <div className={styles.categorias}>   
+        <Banner/>
+        <h1>Monitores</h1>       
+        <Carrossel lista={listaMonitor}/> 
+        <h1>Smartphones</h1>          
+        <Carrossel lista={listaSmartphones}/>   
+        <h1>Notebooks</h1>        
+        <Carrossel lista={listaNotebook}/>       
     </div>
     )
 }

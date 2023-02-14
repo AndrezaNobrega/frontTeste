@@ -13,9 +13,6 @@ const Paginacao = ({limite, total, offSet, setOffSet}) => {
     const atual = offSet ? + 1 : 1;
     const pages = Math.ceil(total/limite)
     const primeiro = Math.max(atual - maxEsquerda, 1)
-
-
-
     
     return (
         <ul className={styles.paginacao}>

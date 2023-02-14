@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <div className='container'>
-          <Routes>
+          <Routes>            
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/cadastro" element={<Cadastro/>}/>     

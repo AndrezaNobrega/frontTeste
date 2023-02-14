@@ -4,6 +4,7 @@ import styles from "./Home.module.css"
 import CardProduto from '../../components/CardsProduto/CardProduto';
 
 import { Link } from 'react-router-dom';
+import Banner from '../../components/banner/Banner';
 
 
 const Home = () => {
@@ -22,8 +23,9 @@ const Home = () => {
 
     return ( 
     <div>   
-        <div>   
-            <h1>Home page</h1>
+        <div>               
+            <Banner/>   
+            <h1>Destaques</h1>      
             <div className={styles.cards}>    
                 {lista.map(result => 
                 <li key = { result.id } to={`/produtos/${result.id}`}> 

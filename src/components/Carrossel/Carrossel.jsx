@@ -28,8 +28,7 @@ const Carrossel = (props) => {
 
 
   return (
-    <div className={styles.categorias}>
-      <h1>{props.categoria}</h1>
+    <div className={styles.categorias}>      
       <hr />
       <div className={styles.coluna}>
         <button onClick={handleLeftClick}>
