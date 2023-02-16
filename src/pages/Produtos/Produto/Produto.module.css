@@ -5,6 +5,8 @@
   margin-right: 15px;
 }
 
+
+
 .miniaturas img {
   width: 115px;
   margin-bottom: 6px;
@@ -19,6 +21,10 @@
   justify-content: center;
   margin-left: 15px;
   display: flex;
+}
+
+.produto h2 {
+  color: #666666;
 }
 
 .produto,
@@ -50,14 +56,12 @@
 }
 
 .lateral i {
-  color: #0075ff;
   padding-bottom: 23%;
   font-size: 13px;
 }
 
 .lateral a {
   font-weight: bold;
-  color: #0075ff;
   font-size: 25px;
   margin-bottom: 5px;
 }

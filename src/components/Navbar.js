@@ -24,6 +24,9 @@ const Navbar = () => {
                 <li>
                     <NavLink className={({isActive}) => (isActive ? 'activel' : '')}  to="/perfil">Perfil</NavLink>
                 </li>
+                <li>
+                    <NavLink className={({isActive}) => (isActive ? 'activel' : '')}  to="/configuracoes">Configurações</NavLink>
+                </li>
             </ul>
         </nav>
     )   

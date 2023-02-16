@@ -1,6 +1,6 @@
 
 .container {
-  color: #404040;
+  color: #3f51b5;
   background-color: #F6FCFF;
   padding-top: 102px;
   min-height: 60vh;
@@ -8,6 +8,11 @@
 
 .container input[type=number] {
   -moz-appearance:textfield;
+}
+
+.container p
+{
+  color: #666666;
 }
 
 
@@ -52,6 +57,7 @@ form {
 }
 
 label {
+  color: #383838;
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
@@ -121,6 +127,29 @@ textarea {
   border-radius: 5px;
 }
 
+/* paginacao */
+
+.botaoPaginacao {
+  color: #0075FF;
+  border: 1px solid #0075FF;
+}
+
+.botaoPaginacao:hover {
+  background-color: #0075FF;
+  color: #FFF;
+}
+
+
+.botaoPaginacao button[disabled] {    
+  border: 1px solid #8dbbf0;
+  color: #8dbbf0;
+}
+
+.produtosPreco {
+  color: #3f51b5;
+}
+
+
 /* cupons */
 
 .icone {
@@ -148,16 +177,18 @@ textarea {
   color: #fff;  
 }
 
-//yellow-theme
+/* perfil */
 
-#yellow-theme .container {
-  background-color: #ffffed;
-  color: #ffce39;
+.activePerfil {
+  color: #3f51b5;
+  font-weight: bold; 
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.2s ease-in;
 }
 
 /* red theme */
 
-a:hover,
+#red-theme a:hover,
 nav button:hover {
   color: #ff6374;
 }
@@ -201,11 +232,9 @@ nav button:hover {
   text-transform: uppercase
 }
 
-.btnCarroussel {
+#red-theme .btnCarroussel {
   color: #ff6374;  
 }
-
-
 
 /*cupons red-theme */
 
@@ -214,3 +243,127 @@ nav button:hover {
   font-size: 50px;
   padding-left: 6em    
   }
+
+/* paginacao red-theme */
+
+#red-theme .botaoPaginacao {
+  color: #ff6374;
+  border: 1px solid #ff6374;
+}
+
+#red-theme .botaoPaginacao:hover {
+  background-color: #ff6374;  
+  color: #FFF;
+}
+
+
+#red-theme .botaoPaginacao button[disabled] {    
+  border: 1px solid #f7bec5 ; 
+  color: #f7bec5 ; 
+}
+
+#red-theme .activePerfil {
+  color: #ff6374;
+  font-weight: bold; 
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.2s ease-in;
+}
+
+#red-theme  .produtosPreco {
+  color: #ff6374;
+}
+
+
+//green-theme container//
+
+#green-theme .container {
+  background-color: #ffffed;
+  color: #224305;
+}
+
+/* green */
+
+#green-theme a:hover,
+nav button:hover {
+  color: #224305;
+}
+
+#green-theme .container {
+  background-color: #F6FCFF;
+  color: #224305;
+}
+
+#green-theme .btn.btn-outline:hover {
+  background-color: #224305;  
+  color: #FFF;
+}
+
+#green-theme .btn1:hover {
+  background-color: #8f9200;
+  color: #FFF;
+}
+
+#green-theme .btn.btn-outline {
+  color: #224305;
+  border: 1px solid #224305;
+}
+
+#green-theme .btn1{  
+  background-color: #224305;;
+  color: #FFF; 
+}
+
+/* green-theme */
+
+#green-theme .activel {
+  transition: all 1s ease-out;
+  background-color: #224305; 
+  color: #fff;  
+}
+
+#green-theme  .brand span {
+  color: #224305;
+  font-weight: 900;
+  text-transform: uppercase
+}
+
+#green-theme .btnCarroussel {
+  color: #224305;  
+}
+
+/*cupons red-theme */
+
+#green-theme .icone {
+  color: #224305;
+  font-size: 50px;
+  padding-left: 6em    
+  }
+
+/* paginacao red-theme */
+
+#green-theme .botaoPaginacao {
+  color: #224305;
+  border: 1px solid #224305;
+}
+
+#green-theme .botaoPaginacao:hover {
+  background-color: #224305;  
+  color: #FFF;
+}
+
+#green-theme .botaoPaginacao button[disabled] {    
+  border: 1px solid #fce064 ; 
+  color: #fce064 ; 
+}
+
+#green-theme .activePerfil {
+  color: #224305;
+  font-weight: bold; 
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.2s ease-in;
+}
+
+#green-theme  .produtosPreco {
+  color: #224305;
+}
+

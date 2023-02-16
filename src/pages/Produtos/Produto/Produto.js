@@ -46,7 +46,7 @@ const Produto = () => {
           </div>
           <div className={styles.lateral}>
             <h2>{produtos.nome}</h2>
-            <a>R$ {(parseFloat(produtos.preco)).toLocaleString('pt-BR', { minimumFractionDigits: 2})}</a>
+            <a className="produtosPreco">R$ {(parseFloat(produtos.preco)).toLocaleString('pt-BR', { minimumFractionDigits: 2})}</a>
             <i>ou 10x de R$ {((parseFloat(produtos.preco))/10).toLocaleString('pt-BR', { minimumFractionDigits: 2})} sem juros</i>
             <span>{produtos.descricao}</span>
             <i>Mais {produtos.estoque} unidades disponíveis</i>

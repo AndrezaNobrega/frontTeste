@@ -1,7 +1,9 @@
 import styles from "./Perfil.module.css";
-import profile from "../../profile/user.png";
 import { useState } from "react";
 import { unMask, mask } from 'remask';
+
+//setas
+import { CgProfile } from 'react-icons/cg';
 
 
 
@@ -30,29 +32,29 @@ export const Perfil = () => {
       <h1 className={styles.titulo}>Meu perfil</h1>
       <div className={styles.perfil}>
         <div className={styles.lateral}>
-          <img src={profile}></img>
+          <div className={styles.profile}><CgProfile/></div>
           <h4>Nome</h4>
           <h5>Razao Social</h5>
           <lu>
             <li>
               <a 
-              className={(mostrar =="Perfil" ? styles.active : '')}
+              className={(mostrar =="Perfil" ? "activePerfil" : '')}
               onClick={() => setMostrar("Perfil")}>Dados pessoais</a>
             </li>
             <li>
               <a
-              className={(mostrar =="Endereço" ? styles.active : '')}
+              className={(mostrar =="Endereço" ? "activePerfil" : '')}
               onClick={() => setMostrar("Endereço")}>Endereço
               </a>
             </li>
             <li>
               <a 
-              className={(mostrar =="Dados" ? styles.active : '')}
+              className={(mostrar =="Dados" ? "activePerfil" : '')}
               onClick={() => setMostrar("Dados")}>Dados bancários</a>
             </li>
             <li>
               <a 
-              className={(mostrar =="Cupons" ? styles.active : '')}
+              className={(mostrar =="Cupons" ? "activePerfil" : '')}
               onClick={() => setMostrar("Cupons")}>Cupons</a>
             </li>
           </lu>

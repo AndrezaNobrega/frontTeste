@@ -8,8 +8,8 @@
     padding-bottom: 10px;
 }
 
-.perfil img {   
-    width: 30%;
+.profile {   
+    font-size: 90px;
 }
 
 .lateral h5 {
@@ -46,10 +46,5 @@
     gap: 30% 30%;
 }
 
-.active {
-    color: #0075FF;
-    font-weight: bold; 
-    transition: 0.3s ease-in;
-    -webkit-transition: 0.2s ease-in;
-}
+
 

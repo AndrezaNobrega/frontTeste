@@ -16,7 +16,7 @@ const Paginacao = ({limite, total, offSet, setOffSet}) => {
     
     return (
         <ul className={styles.paginacao}>
-            <button
+            <button className='botaoPaginacao'
             disabled={offSet == 1}
             onClick={() => setOffSet(offSet - 1)}
             > <GoChevronLeft/></button>
@@ -24,13 +24,13 @@ const Paginacao = ({limite, total, offSet, setOffSet}) => {
             .map((_, index)=>index + primeiro)
             .map((page) =>(
                 <li key={page}>                    
-                    <button              
+                    <button className='botaoPaginacao'             
                      onClick={() => setOffSet(page)}
                      >{page}
                     </button>
                 </li>
             ))}
-            <button
+            <button className='botaoPaginacao'
             onClick={() => setOffSet(offSet + 1)}
             disabled={offSet == pages}
             > <GoChevronRight/></button>

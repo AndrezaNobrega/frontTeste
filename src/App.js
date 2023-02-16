@@ -14,7 +14,7 @@ import { Perfil } from './pages/Perfil/Perfil';
 import ProdutosTabela from './pages/Produtos/ProdutosTabela';
 import Produto from './pages/Produtos/Produto/Produto';
 import Categorias from './pages/Categorias/Categorias';
-import Cores from './pages/Configuracoes/Cores';
+import Configuracoes from './pages/Configuracoes/configuracoes';
 
 //context
 import { useContext } from 'react';
@@ -38,7 +38,7 @@ function App() {
               <Route path="/tabela" element={<ProdutosTabela/>}/>
               <Route path='/produtos/:id' element={<Produto/>}/>
               <Route path='/categorias' element={<Categorias/>}/>   
-              <Route path='/cores' element={<Cores/>}/>            
+              <Route path='/configuracoes' element={<Configuracoes/>}/>            
             </Routes>
           </div>
           <Footer/>
