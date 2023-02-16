@@ -14,28 +14,36 @@ import { Perfil } from './pages/Perfil/Perfil';
 import ProdutosTabela from './pages/Produtos/ProdutosTabela';
 import Produto from './pages/Produtos/Produto/Produto';
 import Categorias from './pages/Categorias/Categorias';
+import Cores from './pages/Configuracoes/Cores';
+
+//context
+import { useContext } from 'react';
+import { ThemeContext } from './context/ThemeContext';
 
 
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar/>
-        <div className='container'>
-          <Routes>            
-            <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/cadastro" element={<Cadastro/>}/>     
-            <Route path="/perfil" element={<Perfil/>}/>  
-            <Route path="/tabela" element={<ProdutosTabela/>}/>
-            <Route path='/produtos/:id' element={<Produto/>}/>
-            <Route path='/categorias' element={<Categorias/>}/>            
-          </Routes>
-        </div>
-        <Footer/>
-      </BrowserRouter>
-    </div>
+  //acessa o tema em todo o app
+  const {theme} = useContext(ThemeContext)
+  return (    
+      <div className='App' id={theme}>
+        <BrowserRouter>
+          <Navbar id={theme}/>
+          <div className='container'>
+            <Routes>            
+              <Route path="/" element={<Home/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/cadastro" element={<Cadastro/>}/>     
+              <Route path="/perfil" element={<Perfil/>}/>  
+              <Route path="/tabela" element={<ProdutosTabela/>}/>
+              <Route path='/produtos/:id' element={<Produto/>}/>
+              <Route path='/categorias' element={<Categorias/>}/>   
+              <Route path='/cores' element={<Cores/>}/>            
+            </Routes>
+          </div>
+          <Footer/>
+        </BrowserRouter>
+      </div>    
   );
 }
 

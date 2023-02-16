@@ -53,7 +53,7 @@ const Produto = () => {
             <div className={styles.botoes}>
               <button className="btn btn-outline">Adicionar ao carrinho</button>
               <i className={styles.comprarAgora}>
-                <button className="btn">Comprar agora</button>
+                <button className="btn1">Comprar agora</button>
               </i>
             </div>
           </div>

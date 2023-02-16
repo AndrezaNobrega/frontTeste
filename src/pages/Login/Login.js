@@ -77,7 +77,7 @@ const Login = () => {
                   value={senha}
                   onChange={e => setSenha(e.target.value)}/>
               </label>            
-              <button className="btn">Entrar</button>         
+              <button className="btn1">Entrar</button>         
               {error && <p className='error'>{error}</p>}
           </form>
       </div>

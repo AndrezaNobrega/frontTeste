@@ -7,7 +7,7 @@ const Cupom = (props) => {
         <div className={styles.cupom}>
         <h2>{props.nome}</h2>
         <p>{props.validade}</p>
-        <a className={styles.icone}><BsCashCoin/></a>        
+        <a className="icone"><BsCashCoin/></a>        
         </div>)
 }
 

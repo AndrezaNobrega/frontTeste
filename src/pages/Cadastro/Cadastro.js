@@ -127,7 +127,7 @@ const Cadastro = () => {
                     onChange={(e) => setConfirmaSenha(e.target.value)}
                 />
                 </label>
-                <button className='btn'>Cadastrar</button>
+                <button className='btn1'>Cadastrar</button>
                 {error && <p className='error'>{error}</p>}
             </form>
         </div>

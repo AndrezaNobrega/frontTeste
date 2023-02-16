@@ -6,7 +6,6 @@ import CardProduto from '../../components/CardsProduto/CardProduto';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/banner/Banner';
 
-
 const Home = () => {
     const [lista, setLista] = useState([]);
     const url = 'http://localhost:3001/produtos';
@@ -25,7 +24,8 @@ const Home = () => {
     <div>   
         <div>               
             <Banner/>   
-            <h1>Destaques</h1>      
+            <h1>Destaques</h1>  
+
             <div className={styles.cards}>    
                 {lista.map(result => 
                 <li key = { result.id } to={`/produtos/${result.id}`}> 

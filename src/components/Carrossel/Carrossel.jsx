@@ -31,7 +31,7 @@ const Carrossel = (props) => {
     <div className={styles.categorias}>      
       <hr />
       <div className={styles.coluna}>
-        <button onClick={handleLeftClick}>
+        <button className="btnCarroussel" onClick={handleLeftClick}>
           <GoChevronLeft />
         </button>
 
@@ -51,7 +51,7 @@ const Carrossel = (props) => {
           ))}
         </div>
 
-        <button onClick={handleRightClick}>
+        <button className="btnCarroussel" onClick={handleRightClick}>
           <GoChevronRight />
         </button>
       </div>
