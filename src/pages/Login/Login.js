@@ -2,8 +2,14 @@ import styles from './Login.module.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//context
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
-const Login = () => {
+
+const Login = () => {    
+
+    const {auth, setAuth}= useContext(AuthContext)
 
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
@@ -17,7 +23,6 @@ const Login = () => {
 
         if(validacao()){
             fetch(`http://localhost:3001/clientes?email=${email}`).then((res)=>{
-                console.log(res)
                 return res.json();
             }).then((resp) =>{      
                 //ñ encontrou o email
@@ -28,6 +33,7 @@ const Login = () => {
                         
                         console.log('Login feito com sucesso')
                         //aqui vai mandar para a página de home
+                        setAuth(resp[0])
                         usenavigate('/')
                     } else{                             
                         

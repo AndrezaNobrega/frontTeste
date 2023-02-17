@@ -3,8 +3,16 @@ import {useState} from "react"
 import { unMask, mask } from 'remask';
 import { useNavigate } from 'react-router-dom';
 
+//context
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+
 
 const Cadastro = () => {
+    const {auth, setAuth}= useContext(AuthContext)
+
+
+
     const [cpf, setCpf] = useState("");
     const onChangeCPF = ev => {
         const originalCpf = unMask(ev.target.value);
@@ -49,7 +57,9 @@ const Cadastro = () => {
             method: "POST",
             headers:{'content-type': 'application/json'},
             body: JSON.stringify(user)
-        }).then((res) => {            
+            
+        }).then((res) => {    
+            setAuth(user)                    
             usenavigate('/')          
             //aqui a gente vai redirecionar pra tela já cadastrado
         }).catch((error) =>{

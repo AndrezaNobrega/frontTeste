@@ -127,6 +127,14 @@ textarea {
   border-radius: 5px;
 }
 
+.container .sucess {
+  color: #1a400e;
+  background-color: #d0f2d0;
+  border: 1px solid #c2f2d0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 /* paginacao */
 
 .botaoPaginacao {

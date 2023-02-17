@@ -5,14 +5,33 @@ import { unMask, mask } from 'remask';
 //setas
 import { CgProfile } from 'react-icons/cg';
 
+//context
+import { useContext } from 'react';
+import { AuthContext } from "../../context/AuthContext";
+
+
+
 
 
 import Cupons from "../Cupons/Cupons";
 
 export const Perfil = () => {
+
+  const {auth, setAuth}= useContext(AuthContext)
+  console.log(auth)
+  console.log(auth.nomeUsuario)
+  console.log(auth.razaoSocial)
+  console.log(auth.cpf, auth.telefone, auth.email)
+
+  const {nomeUsuario, razaoSocial, cpf, telefoneUser, email} = auth;
+
+  console.log(nomeUsuario)
+
+
+
   const [mostrar, setMostrar] = useState("Endereço");
   const [cep, setCep] = useState("");
-  const [telefone, setTelefone] = useState("");
+  const [telefone, setTelefone] = useState(telefoneUser);
 
 
   const onChangeCep = ev => {
@@ -33,8 +52,8 @@ export const Perfil = () => {
       <div className={styles.perfil}>
         <div className={styles.lateral}>
           <div className={styles.profile}><CgProfile/></div>
-          <h4>Nome</h4>
-          <h5>Razao Social</h5>
+          <h4>{nomeUsuario}</h4>
+          <h5>{razaoSocial}</h5>
           <lu>
             <li>
               <a 
@@ -96,7 +115,7 @@ export const Perfil = () => {
             <>
               <label>
                 Email:
-                <input type="text" name="email" />
+                <input type="text" name="email" value={email} />
               </label>
               <label>
                 Telefone:

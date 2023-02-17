@@ -1,24 +1,33 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import styles from "./Banner.module.css";
 
 
-/* isActive={currentSlide === i} */
 
 
 
-const Banner = (
+const Banner = (    
     {autoPlay = true,
-    autoPlayTime = 3000}) => {
+    autoPlayTime = 3000}
+    ) => {
+
+    const [images, setImages] = useState([]);
+    const url = 'http://localhost:3001/banners';
+    
+    async function carregaDados(){
+        await axios.get(url).
+        then(response => setImages(response.data),
+        console.log(images))
+        }
+    
+        useEffect(() => {
+            carregaDados()
+        }, [])
+    
 
 
-    const image1 = 'https://www.kabum.com.br/core/_next/image?url=https://themes.kabum.com.br/conteudo/layout/3125/banner_img.jpg&w=1920&h=400&q=100'
-    const image2 = 'https://www.kabum.com.br/core/_next/image?url=https://themes.kabum.com.br/conteudo/layout/2839/banner_img.jpg&w=1920&h=400&q=100'
-    const image3 = 'https://www.kabum.com.br/core/_next/image?url=https://themes.kabum.com.br/conteudo/layout/3061/banner_img.jpg&w=1920&h=400&q=100'
-    const image4 = 'https://www.kabum.com.br/core/_next/image?url=https://themes.kabum.com.br/conteudo/layout/2839/banner_img.jpg&w=1920&h=400&q=100'
-
-    const images = [image1, image2, image3, image4]
     const [currentSlide, setCurrentSlide] = useState(0)
     const amountSlides = images.length
 
@@ -43,10 +52,10 @@ const Banner = (
 
         <div className={styles.wrapper}>
             
-            {images.map((imageurl, index)=> 
-                <div key={index} 
+            {images.map((image, index)=> 
+                <div key={image.id} 
                 className={styles.slide} 
-                style={{backgroundImage: `url(${imageurl})`,
+                style={{backgroundImage: `url(${image.image})`,
                 marginLeft: index === 0 ? `-${currentSlide * 100}%` : undefined}}>
                 </div>
             )}

@@ -3,12 +3,19 @@ import axios from 'axios'
 import styles from "./Home.module.css"
 import CardProduto from '../../components/CardsProduto/CardProduto';
 
+
+
+
+
+
 import { Link } from 'react-router-dom';
 import Banner from '../../components/banner/Banner';
 
 const Home = () => {
     const [lista, setLista] = useState([]);
     const url = 'http://localhost:3001/produtos';
+
+
 
     async function carregaDados(){
         await axios.get(url).
@@ -23,7 +30,7 @@ const Home = () => {
     return ( 
     <div>   
         <div>               
-            <Banner/>   
+            <Banner/>
             <h1>Destaques</h1>  
 
             <div className={styles.cards}>    
