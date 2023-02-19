@@ -36,15 +36,6 @@
     width: 70%;
 }
 
-.endereco {
-    padding-bottom: 25px;  
-    padding-left: 10%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30% 30%;
-}
 
 
 

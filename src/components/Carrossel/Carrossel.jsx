@@ -1,34 +1,30 @@
 import styles from "./Carrossel.module.css";
-import CardProduto from '../../components/CardsProduto/CardProduto';
+import CardProduto from "../../components/CardsProduto/CardProduto";
 import { useRef } from "react";
 
 //setas
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
 //redirecionamento
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Carrossel = (props) => {
+  const carousel = useRef(null);
 
-    const carousel = useRef(null);
+  const handleLeftClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current.offsetWidth);
+    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+  };
 
-    const handleLeftClick = (e) => {
-        e.preventDefault();
-        console.log(carousel.current.offsetWidth)
-        carousel.current.scrollLeft  -= carousel.current.offsetWidth;
-
-    }
-
-    const handleRightClick = (e) => {
-        console.log(carousel.current.offsetWidth)
-        e.preventDefault();
-        carousel.current.scrollLeft  += carousel.current.offsetWidth;        
-    }
-    
-
+  const handleRightClick = (e) => {
+    console.log(carousel.current.offsetWidth);
+    e.preventDefault();
+    carousel.current.scrollLeft += carousel.current.offsetWidth;
+  };
 
   return (
-    <div className={styles.categorias}>      
+    <div className={styles.categorias}>
       <hr />
       <div className={styles.coluna}>
         <button className="btnCarroussel" onClick={handleLeftClick}>

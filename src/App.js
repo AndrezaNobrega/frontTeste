@@ -19,14 +19,13 @@ import Configuracoes from './pages/Configuracoes/configuracoes';
 //context
 import { useContext } from 'react';
 import { ThemeContext } from './context/ThemeContext';
-import { AuthContext } from './context/AuthContext';
+
 
 
 
 function App() {
   //acessa o tema em todo o app
   const {theme} = useContext(ThemeContext)
-  const {auth, setAuth}= useContext(AuthContext)
   
   return (    
       <div className='App' id={theme}>

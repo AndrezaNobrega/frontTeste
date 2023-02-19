@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 import styles from "./Navbar.module.css"
 
-import { useNavigate } from 'react-router-dom';
+
 
 
 //context
@@ -10,15 +10,7 @@ import { useContext } from 'react';
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-
-    const usenavigate = useNavigate()
-
-    function logOut(){
-        setAuth('');
-        usenavigate('/');
-    }
-
-
+    
     const {auth, setAuth}= useContext(AuthContext)
     return (
         <nav className={styles.navbar}>
@@ -26,6 +18,9 @@ const Navbar = () => {
                 <span>Tech</span> Shopping
             </NavLink>
             <ul className={styles.links_list}>
+                    <li>
+                        <NavLink className={({isActive}) => (isActive ? 'activel' : '')}  to="/categorias">Categorias</NavLink>
+                    </li>
                 {auth && (
                     <>
                     <li>
@@ -38,7 +33,7 @@ const Navbar = () => {
                         <NavLink className={({isActive}) => (isActive ? 'activel' : '')}  to="/configuracoes">Configurações</NavLink>
                     </li>
                     <li>
-                        <button onClick={logOut}>Sair</button>
+                        <NavLink onClick={e => setAuth('')} to="/">Sair</NavLink>                     
                     </li>
                     
                     </>
