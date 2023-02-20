@@ -6,7 +6,7 @@ export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
     // red-theme, default, 
-    const [auth, setAuth] =  useauth("auth", " ")
+    const [auth, setAuth] =  useauth("auth", "")
 
 
 
