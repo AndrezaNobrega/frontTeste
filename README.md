@@ -15,7 +15,7 @@
 - Clonar o repositório: https://github.com/AndrezaNobrega/teste
 - Entrar na página backend - Este irá rodar o Json Server.
 
-Clonar o repositório atual e rodar em ambos ```npm start```
+- Clonar o repositório atual e rodar em ambos ```npm i``` e ``` npm start```
 
 
 # Telas do projeto
