@@ -30,7 +30,7 @@
 
 
 # Login
-Apenas um formulário com email e senha. Possui validações e redirecionamento.
+Formulário com email e senha. Possui validações e redirecionamento.
 
 # Cadastro Cliente 
 Insira nome, cpf/cnpj, razão social, email, telefone, senha e sua confirmação. São aplicadas as máscaras necessárias. Bem como, algumas validações.
