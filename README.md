@@ -14,7 +14,6 @@
 
 - Clonar o repositório: https://github.com/AndrezaNobrega/teste
 - Entrar na página backend - Este irá rodar o Json Server.
-
 - Clonar o repositório atual e rodar em ambos ```npm i``` e ``` npm start```
 
 
@@ -22,7 +21,7 @@
 
 - [Login](#Login)
 - [Cadastro do cliente](#cadastroCliente)
--[Perfil](#Perfil)
+- [Perfil](#Perfil)
 - [Cupons](#cupons)
 - [Produtos](#Produtos)
 - [Categrias dos produtos](#categoriasProdutos)
