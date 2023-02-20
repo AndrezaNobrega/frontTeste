@@ -15,7 +15,7 @@ const Cupons = () => {
   //multiplas requisições
   const multiple = () => {
     Promise.all([
-      axios.get(url + `?_page=${offSet}&_limit=4`),
+      axios.get(url + `?_page=${offSet}&_limit=2`),
       axios.get(url),
     ]).then((response) => {
       setLista(response[0].data);
@@ -36,7 +36,7 @@ const Cupons = () => {
           </li>
         ))}
         <Paginacao
-          limite={4}
+          limite={2}
           total={total}
           offSet={offSet}
           setOffSet={setOffSet}
