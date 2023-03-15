@@ -5,14 +5,15 @@ import styles from "./Paginacao.module.css";
 //setas
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
-const maxItens = 5; //max de botões
-const maxEsquerda = (maxItens - 1) / 2;
+
 
 //total = n de elementos
-const Paginacao = ({ limite, total, offSet, setOffSet }) => {
+const Paginacao = ({ limite = 5, total, offSet, setOffSet }) => {
   const atual = offSet ? +1 : 1;
   const pages = Math.ceil(total / limite);
   const primeiro = Math.max(atual - maxEsquerda, 1);
+
+  const maxEsquerda = (limite - 1) / 2;
 
   return (
     <ul className={styles.paginacao}>
@@ -24,7 +25,8 @@ const Paginacao = ({ limite, total, offSet, setOffSet }) => {
         {" "}
         <GoChevronLeft />
       </button>
-      {Array.from({ length: Math.min(maxItens, pages) })
+      {/* tirar um map */}
+      {Array.from({ length: Math.min(limite, pages) })
         .map((_, index) => index + primeiro)
         .map((page) => (
           <li key={page}>

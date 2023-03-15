@@ -37,9 +37,6 @@ const [chavePix, setChavePix] = useState("");
 
 
 const {nomeUsuario, razaoSocial} = auth;
-
-
-
   useEffect(() => {
     if (auth) {
         setEmail(auth.email)

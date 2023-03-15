@@ -22,8 +22,8 @@ import { ThemeContext } from './context/ThemeContext';
 
 
 
-
 function App() {
+  
   //acessa o tema em todo o app
   const {theme} = useContext(ThemeContext)
   

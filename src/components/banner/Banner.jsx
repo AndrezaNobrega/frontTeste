@@ -8,7 +8,6 @@ const Banner = ({  autoPlay = true,  autoPlayTime = 3000 }) => {
   const [images, setImages] = useState([]);
   const url = "http://localhost:3001/banners";
 
-
   const [currentSlide, setCurrentSlide] = useState(0);
   const amountSlides = images.length;
 
@@ -31,9 +30,6 @@ const Banner = ({  autoPlay = true,  autoPlayTime = 3000 }) => {
     return () => clearTimeout(timer);
 
   }, [currentSlide, autoPlayTime]);
-
-
-
 
   return (
     <div className={styles.wrapper}>
