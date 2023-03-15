@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./Home.module.css";
 
+
+
 import { Link } from "react-router-dom";
 
 import Banner from "../../components/banner/Banner";
@@ -9,12 +11,11 @@ import CardProduto from "../../components/CardsProduto/CardProduto";
 
 const Home = () => {
   const [lista, setLista] = useState([]);
-  const url = "http://localhost:3001/produtos";
-
+  
   async function carregaDados() {
     await axios
-      .get(url)
-      .then((response) => setLista(response.data), console.log(lista));
+      .get(process.env.REACT_APP_BASE_URL+'produtos')
+      .then((response) => setLista(response.data));
   }
 
   useEffect(() => {
@@ -26,7 +27,6 @@ const Home = () => {
       <div className={styles.home}>
         <Banner />
         <h1>Destaques</h1>
-
         <div className={styles.cards}>
           {lista.map((result) => (
             <li key={result.id} to={`/produtos/${result.id}`}>

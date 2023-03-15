@@ -4,33 +4,32 @@ import axios from "axios";
 
 import styles from "./Banner.module.css";
 
-const Banner = ({ autoPlay = true, autoPlayTime = 3000 }) => {
+const Banner = ({  autoPlay = true,  autoPlayTime = 3000 }) => {
   const [images, setImages] = useState([]);
   const url = "http://localhost:3001/banners";
-
-  async function carregaDados() {
-    await axios
-      .get(url)
-      .then((response) => setImages(response.data), console.log(images));
-  }
-
-  useEffect(() => {
-    carregaDados();
-  }, []);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const amountSlides = images.length;
 
   useEffect(() => {
+    async function carregaDados() {
+      await axios
+        .get(url)
+        .then((response) => setImages(response.data));
+    }
+
+    carregaDados();
+
     const timer = setTimeout(() => {
       //p n ultrapassar o tamanho da lista de imagens
       const newSlideIndex =
         currentSlide >= images.length - 1 ? 0 : currentSlide + 1;
       setCurrentSlide(newSlideIndex);
     }, autoPlayTime);
+    
+    return () => clearTimeout(timer);
 
-    return () => clearTimeout();
-  }, [currentSlide]);
+  }, [currentSlide, autoPlayTime]);
 
   return (
     <div className={styles.wrapper}>

@@ -9,6 +9,8 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 const Carrossel = (props) => {
+
+  const { lista } = props;
   const carousel = useRef(null);
 
   const handleLeftClick = (e) => {
@@ -32,7 +34,7 @@ const Carrossel = (props) => {
         </button>
 
         <div className={styles.carousel} ref={carousel}>
-          {props.lista.map((result) => (
+          {lista.map((result) => (
             <li key={result.id} to={`/produtos/${result.id}`}>
               <Link to={`/produtos/${result.id}`}>
                 {

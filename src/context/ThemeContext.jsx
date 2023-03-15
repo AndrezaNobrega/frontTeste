@@ -7,8 +7,6 @@ export const ThemeProvider = ({children}) => {
     // red-theme, default, 
     const [theme, setTheme] =  useTheme("theme", " ")
 
-
-
     return (
     <ThemeContext.Provider value={{theme, setTheme}}>
         {children}
